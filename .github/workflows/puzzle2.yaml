@@ -1,0 +1,12 @@
+name: Vault Riddle
+on: [workflow_dispatch]
+
+env:
+  API_KEY: ${{ secrets.MY_SECRET_KEY }}
+
+jobs:
+  reveal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print masked value
+        run: echo "API Key: $API_KEY"
