@@ -1,0 +1,10 @@
+name: Reusable Workflow Caller
+on:
+  workflow_dispatch:
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      environment: "production"
+    secrets:
+      DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
