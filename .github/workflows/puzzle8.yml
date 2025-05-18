@@ -1,0 +1,9 @@
+name: Fail Fast
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Step 1"
+      - run: exit 1
+      - run: echo "Step 3"
