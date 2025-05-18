@@ -1,0 +1,16 @@
+name: Collector
+on: push
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Output
+        run: |
+          echo "This is evidence!" > clue.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clue-file
+          path: clue.txt
