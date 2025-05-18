@@ -1,0 +1,10 @@
+name: Hidden Path
+on: push
+
+jobs:
+  puzzle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run only if README changed
+        if: contains(github.event.head_commit.message, 'README')
+        run: echo "You updated the docs!"
