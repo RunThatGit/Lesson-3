@@ -1,0 +1,14 @@
+name: Conditional Manual
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Deploy to production?'
+        required: true
+        default: 'no'
+jobs:
+  deploy:
+    if: ${{ github.event.inputs.deploy == 'yes' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying to production..."
