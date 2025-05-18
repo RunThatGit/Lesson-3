@@ -1,0 +1,17 @@
+name: Production Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm install
+      - name: Build App
+        run: npm run build
+      - name: Deploy to Server
+        run: |
+          scp -r ./dist user@123.45.67.89:/var/www/html/
