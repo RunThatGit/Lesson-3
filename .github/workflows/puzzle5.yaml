@@ -1,0 +1,15 @@
+name: Check Shell Skills
+on: push
+jobs:
+  shell-skill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run test
+        run: |
+          VAR1=5
+          VAR2=10
+          if [ $VAR1 -lt $VAR2 ]; then
+            echo "VAR1 is smaller"
+          else
+            echo "VAR2 is smaller"
+          fi
